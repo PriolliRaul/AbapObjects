@@ -1,0 +1,50 @@
+REPORT  ZOBJECTS.
+
+*----------------------------------------------------------------------*
+*       CLASS person DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS person DEFINITION.   "Describes the structure and interface of the class.
+
+  PUBLIC SECTION.   "Methods and attributes that are accessible from outside the class.
+
+    DATA: height TYPE N,
+          weight TYPE N,
+          name   TYPE STRING,
+	  age    TYPE N,
+	  bmi    TYPE N.
+
+    METHODS constructor.
+
+    METHODS calculateBMI. " Body mass index
+
+  PRIVATE SECTION.
+
+    "Methods and attributes that are only accessible within the class itself (We will not use that now).
+
+ENDCLASS.                    "person DEFINITION
+
+*----------------------------------------------------------------------*
+*       CLASS person IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS person IMPLEMENTATION.   "Provides the actual logic or behavior of the class.
+
+  METHOD constructor.
+
+    height = 177.
+    weight = 68.
+    name = 'Raul'.
+    age = 24.
+
+  ENDMETHOD.                    "constructor
+
+  METHOD calculateBMI.
+
+    bmi = weight / ( height * height ).
+
+  ENDMETHOD.                    "calculateBMI
+
+ENDCLASS.                    "person IMPLEMENTATION
